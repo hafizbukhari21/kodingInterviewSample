@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       let x = 122544102220111
+       let y = x
+       
+       //versi pas live coding astra
+       function breakdown_b(y){
+           let text = x.toString()
+           let arr = text.split("")
+           let lenghtOut = arr.length
+           let zero = ""
+           for (let i=0;i<arr.length;i++){
+                let temp = arr[i]       
+                for(let j =lenghtOut-1 ; j>0; j--){
+                   zero +="0"
+                }      
+
+                lenghtOut--       
+            console.log(temp+zero)
+            zero = ""
+           }
+
+       }
+
+    //versi gabut
+    
+    function breakdown(x){
+        let stringX = x.toString()
+        let panjang = stringX.length
+        let stringXIdx = 0
+        
+        while(panjang !==0){
+            let print0=panjang-1
+            let nol=""
+            while(print0 !==0){
+                nol+="0"
+                print0--
+            }
+            
+            console.log(stringX[stringXIdx]+nol)
+            panjang--
+            stringXIdx++
+        }
+    }
+    console.time()
+       breakdown(x)
+    console.timeEnd()
+
+    console.time
+       breakdown_b(y)
+    console.timeEnd()
+
+    </script>
+</body>
+</html>

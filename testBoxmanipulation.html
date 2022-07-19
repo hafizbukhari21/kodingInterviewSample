@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inputext">
+    <div>
+        total kata: <p id="totalKata"></p>
+    </div>
+    <div>
+        Kata Paling Sering: <p id="kataPalingSering"></p>
+    </div>
+    <div>
+        Kata Paling jarang: <p id="kataPalingJarang"></p>
+    </div>
+
+    <div>
+        List Kata
+        <ul id="listKata"></ul>
+    </div>
+
+  
+
+    <script>
+        let textBox = document.querySelector("#inputext")
+        let kataSering = document.querySelector("#kataPalingSering")
+        let kataJarang = document.querySelector("#kataPalingJarang")
+        let totalKata = document.querySelector("#totalKata")
+        let listKata = document.querySelector("#listKata")
+        
+
+        textBox.addEventListener("input",()=>{
+           
+            
+           if(textBox.value ==="") {
+            totalKata.innerHTML = 0
+            kataSering.innerHTML = ""
+            kataJarang.innerHTML = ""
+            listKata.innerHTML =""
+           }
+           
+           else{
+            let arrKata = PisahkanKata(textBox.value)
+            totalKata.innerHTML = arrKata.length
+            KataPaling(arrKata)
+           }
+           
+           
+            
+        })
+
+
+        function KataPaling(arrKata){
+            let temp = {}
+            let list = ""
+            let tempSort= []
+            
+
+            arrKata.forEach(element => {
+                temp[element] = (temp[element] || 0 ) +1 
+            });
+
+            for(let tempE in temp){
+                tempSort.push([tempE, temp[tempE]])
+            }
+            tempSort.sort((a,b)=>b[1]-a[1])
+
+            kataSering.innerHTML = `${tempSort[0][0]} - ${tempSort[0][1] } kata`
+            kataJarang.innerHTML = `${tempSort[tempSort.length-1][0]} - ${tempSort[tempSort.length-1][1]} Kata`
+
+            tempSort.forEach(element => {
+                list+=`<li>${element[0]} - ${element[1]} Kata</li>`
+                listKata.innerHTML = list
+            });
+            
+            
+
+
+        }
+        function PisahkanKata(string){
+            return arrKata = string.trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").split(" ")
+            
+        }
+    </script>
+</body>
+</html>

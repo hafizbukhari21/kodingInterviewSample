@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script>
+            let input = 20
+            
+            // BilanganPrima(input)
+            SatuDuaBintang(input)
+
+            function BilanganPrima(input){
+                let arrOutput=[]
+                for(let i=1; i<=input; i++){
+                    if(i==1) arrOutput.push(i)
+
+                    else{
+                        if(i%2==0)arrOutput.push("*")
+                        else{
+                            let otherFactor=0
+                            for(let j=2; j<=i-1;j++){
+                                if(i%j==0) otherFactor++
+                            }
+
+                            if(otherFactor>0) arrOutput.push("*")
+
+                            else arrOutput.push(i)
+                        }
+                    }
+                }
+
+                console.log(arrOutput)
+            }
+
+            function SatuDuaBintang(input){
+                let factor = 0
+                let arrOutput=[]
+                for(let i=1; i<=input; i++){
+                    
+                    if(factor ==0){
+                        arrOutput.push(i)
+                        factor++
+                    }
+                    else if(factor==1){
+                        arrOutput.push("*")
+                        factor++
+                    }
+                    else if(factor==2){
+                        arrOutput.push(i)
+                        factor++
+                    }
+                    else if(factor==3){
+                        arrOutput.push(i)
+                        factor++
+                    }
+                    else{
+                        arrOutput.push("*")
+                        factor=0
+                    }
+                    
+                }
+
+                console.log(arrOutput)
+            }
+        </script>
+</body>
+</html>
