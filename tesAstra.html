@@ -9,8 +9,9 @@
 <body>
     
     <script>
-       let x = 122544102220111
+       let x = 1225
        let y = x
+       let z = x
        
        //versi pas live coding astra
        function breakdown_b(y){
@@ -51,12 +52,30 @@
             stringXIdx++
         }
     }
-    console.time()
-       breakdown(x)
-    console.timeEnd()
 
-    console.time
-       breakdown_b(y)
+    //kompleksitas n2 kayanya
+    function breakdown_c(x){
+        let stringX = x.toString()
+        let stringZero =   stringX.replace(/[1-9]/g,"0")
+
+        for(let i=0; i<stringX.length; i++){
+            stringZero = stringZero.replace("0","")
+            console.log(stringX.charAt(i)+stringZero) 
+        }        
+    }
+
+
+    // console.time()
+    //    breakdown(x)
+    // console.timeEnd()
+
+    // console.time()
+    //    breakdown_b(y)
+    // console.timeEnd()
+
+
+    console.time()
+       breakdown_c(z)
     console.timeEnd()
 
     </script>
