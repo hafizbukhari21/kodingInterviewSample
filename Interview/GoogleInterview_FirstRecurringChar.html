@@ -12,27 +12,38 @@
         let input_b = "DGHJHGE"//=G
 
 
-        console.log(firstRecurring(input_b))
+
 
         function firstRecurring(input){
-            
-            let arr = []
-            for(let i=0;i<input.length;i++){
-                arr = [...updateOrInsert(arr,{char:input.charAt(i), length:1})]
+            for(let i =0;i<input.length;i++){
+                for(let j=i+1; j<input.length;j++){
+                    if(input.charAt(i)===input.charAt(j)) return input.charAt(i)
+                }
             }
-            arr.sort((a,b)=>b.length - a.length)
-            return arr[0].char
+            return null
         }
+        console.log(firstRecurring(input_b))
 
-        function updateOrInsert(arr,element){
-            let idx  = arr.findIndex(e=>e.char===element.char)
-            //existing
-            if(idx>-1) arr[idx].length+=1
 
-            //not exist
-            else arr.push(element)
-            return arr
-        }
+        // function firstRecurring(input){
+            
+        //     let arr = []
+        //     for(let i=0;i<input.length;i++){
+        //         arr = [...updateOrInsert(arr,{char:input.charAt(i), length:1})]
+        //     }
+        //     arr.sort((a,b)=>b.length - a.length)
+        //     return arr[0].char
+        // }
+
+        // function updateOrInsert(arr,element){
+        //     let idx  = arr.findIndex(e=>e.char===element.char)
+        //     //existing
+        //     if(idx>-1) arr[idx].length+=1
+
+        //     //not exist
+        //     else arr.push(element)
+        //     return arr
+        // }
 
         
     </script>
