@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let magazine = [ 'give', 'me', 'one', 'grand', 'today', 'night' ]
+        let note = [ 'give', 'one', 'grand', 'today' ]
+        console.log(checkMagazineDo(magazine,note))
+
+        function checkMagazineDo(magazine,note){
+            let startMagazine=0
+            for(let i=0; i<note.length; i++){
+                for(let j=startMagazine; j<magazine.length; j++){
+                    debugger
+                    if(note[i]==magazine[j]){
+                        debugger
+                        magazine.splice(j,1)
+                        note.splice(i,1)
+                    }
+                    
+                    startMagazine++
+                }
+            }
+    
+    if(note.length==0)return "Yes"
+    else return "No"
+        }
+    </script>
+</body>
+</html>

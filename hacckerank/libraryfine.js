@@ -1,5 +1,5 @@
 function libraryFine(d1, m1, y1, d2, m2, y2) {
-    
+    //masih salah
     console.log(d1)
     if(y2>y1) return 0
     let getYear = y1-y2

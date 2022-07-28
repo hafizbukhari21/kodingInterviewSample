@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let x = 6  
+         let y= 9.
+
+function test( x,  y){
+    if(x < y) return test(y, x)
+    else if(y != 0)
+    return (x + test(x, y-1))
+    else
+    return 0//stoper
+}
+    
+
+console.log(test(x,y)) 
+    </script>
+</body>
+</html>
+
+<!-- x6 y9
+return x9 y6
+return 9+(x9, y5)
+return 9+9(x9, y4)
+return 9+9+9(x9, y3)
+return 9+9+9+9(x9, y2)
+return 9+9+9+9+9(x9, y1)
+return 9+9+9+9+9+9(x9, y1)
+return 9+9+9+9+9+9+0(x9, y0) -->
+
+

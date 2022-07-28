@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function helper(biggest,arrOpposite,b){
+            debugger
+            if(!arrOpposite || biggest>=b) return -1
+            debugger
+            let canLoop = true
+            debugger
+            for(let i=arrOpposite.length-1;i>=0;i--){
+                debugger
+                if (biggest+arrOpposite[i]>b) {
+                    debugger
+                    let sekarang = biggest+arrOpposite[i+1]
+                    debugger
+                    return sekarang
+                }
+            }
+            return -2
+        }
+        function getMoneySpent(keyboards, drives, b) {
+            drives = drives.sort((a,b)=>b-a).filter(e=>e<=b)
+            keyboards = keyboards.sort((a,b)=>b-a).filter(e=>e<=b)
+            debugger
+            if(drives[0]>keyboards[0]) return helper(drives[0],keyboards,b)
+            return(keyboards[0],drives,b)
+
+            return -3
+        }
+        let keyboards = [3,1]
+        let drives = [5,2,8]
+        let max=10
+        console.log(getMoneySpent(keyboards,drives,max))
+    </script>
+</body>
+</html>
